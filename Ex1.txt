@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    
+        <input style="margin: 10px;width:max-content;" type="text" id="str" placeholder="Enter the text to be reversed"/><br>
+        <input style="margin:10px;"type="submit" id="sub" name="submit" onclick="reverse()" value="Submit"/><br>
+    <script>
+        function reverse()
+{
+    var str = document.getElementById("str").value;
+    var n = str.length;
+    var first = 0;
+    var last = 0;
+    var nstr = "";
+    for(var i=0;i<n;i++)
+    {
+        if(str[i]==" ")
+        {
+            last = i-1;
+            while(last>=first)
+            {
+                nstr += str[last];
+                last--;
+            }
+            nstr += " ";
+            first = i + 1;
+        }
+        if(i == n-1)
+        {
+            last = i;
+            while(last>=first)
+            {
+                nstr += str[last];
+                last--;
+            }
+        }
+    }
+    alert(`The final answer is : ${nstr}`);
+}
+    </script>
+</body>
+</html>
